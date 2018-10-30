@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {
   View, TouchableOpacity, Image,
 } from 'react-native';
+
 import styles from './styles';
 
 const Header = ({ onPress }) => (
