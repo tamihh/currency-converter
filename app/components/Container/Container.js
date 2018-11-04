@@ -1,18 +1,22 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import Proptypes from 'prop-types';
-import { View, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { View } from 'react-native';
+
 import styles from './styles';
 
-const Container = ({ children }) => (
-  <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-    <View style={styles.container}>
+const Container = ({ children, backgroundColor }) => {
+  const containerStyles = [styles.container];
+  if (backgroundColor) {
+    containerStyles.push({ backgroundColor });
+  }
+  return (
+    <View style={containerStyles}>
       {children}
     </View>
-  </TouchableWithoutFeedback>
-);
-
-Container.propTypes = {
-  children: Proptypes.any,
+  );
 };
 
-export default Container;
+Container.propTypes = {
+  children: PropTypes.any,
+  backgroundColor: PropTypes.string,
+};
