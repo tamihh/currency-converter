@@ -20,3 +20,5 @@ Container.propTypes = {
   children: PropTypes.any,
   backgroundColor: PropTypes.string,
 };
+
+export default Container;
